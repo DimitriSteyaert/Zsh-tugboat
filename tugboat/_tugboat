@@ -1,31 +1,34 @@
 #compdef tugboat
+
+# Tugboat zsh autocompletion
+
 _tugboat() {
   local -a commands
   commands=(
-    'add-key:Upload an ssh public key.'
+    'add-key:[NAME] Upload an ssh public key.'
     'authorize:Authorize a DigitalOcean account with tugboat.'
-    'create:Create a droplet.'
-    'destroy:Destroy a droplet.'
-    'destroy_image:Destroy an image.'
+    'create:[NAME] Create a droplet.'
+    'destroy:[FUZZY_NAME] Destroy a droplet.'
+    'destroy_image:[FUZZY_NAME] Destroy an image.'
     'droplets:Retrieve a list of your droplets.'
-    'halt:Shutdown a droplet.'
-    'help:Describe commands or a specific command.'
+    'halt:[FUZZY_NAME] Shutdown a droplet.'
+    'help:[COMMAND] Describe commands or a specific command.'
     'images:Retrieve a list of your images.'
-    'info:Show a droplets information.'
-    'info_image:Show an images information.'
+    'info:[FUZZY_NAME] [OPTIONS] Show a droplets information.'
+    'info_image:[FUZZY_NAME] [OPTIONS] Show an images information.'
     'keys:Show available SSH keys.'
-    'password-reset:Reset root password.'
-    'rebuild:Rebuild a droplet.'
+    'password-reset:[FUZZY_NAME] Reset root password.'
+    'rebuild:[FUZZY_NAME] [IMAGE_NAME] Rebuild a droplet.'
     'regions:Show regions.'
-    'resize:Resize a droplet.'
-    'restart:Restart a droplet.'
+    'resize:[FUZZY_NAME -s, --size=N] Resize a droplet.'
+    'restart:[FUZZY_NAME] Restart a droplet.'
     'sizes:Show available droplet sizes.'
-    'snapshot:Queue a snapshot of the droplet.'
-    'ssh:SSH into a droplet.'
-    'start:Start a droplet.'
+    'snapshot:[SNAPSHOT_NAME] [FUZZY_NAME] [OPTIONS] Queue a snapshot of the droplet.'
+    'ssh:[FUZZY_NAME] SSH into a droplet.'
+    'start:[FUZZY_NAME] Start a droplet.'
     'verify:Check your DigitalOcean credentials.'
     'version:Show version.'
-    'wait:Wait for a droplet to reach a state.'
+    'wait:[FUZZY_NAME] Wait for a droplet to reach a state.'
   )
 
   if (( CURRENT == 2 )); then
