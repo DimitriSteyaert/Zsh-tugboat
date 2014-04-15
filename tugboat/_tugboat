@@ -1,0 +1,38 @@
+#compdef tugboat
+_tugboat() {
+  local -a commands
+  commands=(
+    'tugboat add-key NAME:Upload an ssh public key.'
+    'tugboat authorize:Authorize a DigitalOcean account with tugboat.'
+    'tugboat create NAME:Create a droplet.'
+    'tugboat destroy FUZZY_NAME:Destroy a droplet.'
+    'tugboat destroy_image FUZZY_NAME:Destroy an image.'
+    'tugboat droplets:Retrieve a list of your droplets.'
+    'tugboat halt FUZZY_NAME:Shutdown a droplet.'
+    'tugboat help [COMMAND]:Describe commands or a specific command.'
+    'tugboat images:Retrieve a list of your images.'
+    'tugboat info FUZZY_NAME [OPTIONS]:Show a droplet's information.'
+    'tugboat info_image FUZZY_NAME [OPTIONS]:Show an image's information.'
+    'tugboat keys:Show available SSH keys.'
+    'tugboat password-reset FUZZY_NAME:Reset root password.'
+    'tugboat rebuild FUZZY_NAME IMAGE_NAME:Rebuild a droplet.'
+    'tugboat regions:Show regions.'
+    'tugboat resize FUZZY_NAME -s, --size=N:Resize a droplet.'
+    'tugboat restart FUZZY_NAME:Restart a droplet.'
+    'tugboat sizes:Show available droplet sizes.'
+    'tugboat snapshot SNAPSHOT_NAME FUZZY_NAME [OPTIONS]:Queue a snapshot of the droplet.'
+    'tugboat ssh FUZZY_NAME:SSH into a droplet.'
+    'tugboat start FUZZY_NAME:Start a droplet.'
+    'tugboat verify:Check your DigitalOcean credentials.'
+    'tugboat version:Show version.'
+    'tugboat wait FUZZY_NAME:Wait for a droplet to reach a state.'
+  )
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_tugboat
